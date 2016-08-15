@@ -1,0 +1,6 @@
+{
+  "name": "我的笔记",
+  "tagline": "程序员笔记",
+  "body": "#个人笔记\r\n### QT读取中文文件乱码解决方案\r\nQFile file(\"xxxx.txt\");  \r\nQTextStream stream(file,QIODevice::ReadOnly);  \r\nstream.setCodeC( QTextCodec::codecForName(\"GB2312\") );  \r\nstream.readAll(); \r\n\r\n### 字符转换\r\nchar转wchar  unicode mbtowc\r\n\r\n### vs c++字符编码问题\r\n##1.源码文件是UTF8编码\r\nwchar_t wch = _T('陈');//unicode\r\nstd::cout << std::hex << wch << std::endl;\r\nwchar_t wch1 = L'陈';//unicode\r\nstd::cout << std::hex << wch1 << std::endl;\r\nwchar_t wch2 = '陈';//GBK\r\nstd::cout << std::hex << wch2 << std::endl;\r\n\r\n##QString和CString都采用的是unicode编码\r\n\r\n##5、QT MFC char*传递乱码问题\r\nQString str = \"陈\";\r\nQTextCodec *pCodec = QTextCodec::codecForName( \"GBK\" );\r\nQByteArray data = pCodec->fromUnicode( str );\r\ndata.data()\r\n\r\n\r\n### stl正则表达式\r\nstl正则表达式试中regex_search匹配部分字符就行，regex_match需要完全匹配\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
