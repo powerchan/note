@@ -28,3 +28,9 @@ data.data()
 
 ### stl正则表达式
 stl正则表达式试中regex_search匹配部分字符就行，regex_match需要完全匹配
+### 函数调用误改了参数（犯过的低级错误）
+
+for(....)
+{
+ stl::string(buf,len)//len太大 覆盖函数栈空间 导致程序崩溃
+}
